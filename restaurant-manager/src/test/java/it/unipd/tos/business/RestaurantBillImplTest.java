@@ -26,7 +26,12 @@ public class RestaurantBillImplTest {
         RestaurantBillImpl rb = new RestaurantBillImpl();
         rb.getOrderPrice(menu);
     }
-		
+    @Test
+    public void ShowItemNameString() {
+        ArrayList<MenuItem> menu = new ArrayList<>();
+        menu.add(new MenuItem(MenuItem.itemType.Pizze, "Diavola", 8));
+        assertEquals("Diavola",menu.get(0).getName()); 
+    }
     @Test
     public void LessThan10PizzasAndLessThan100TotalPrice() throws RestaurantBillException{
         ArrayList<MenuItem> menu = new ArrayList<>();
